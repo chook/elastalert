@@ -385,8 +385,13 @@ def build_es_conn_config(conf):
     if 'es_url_prefix' in conf:
         parsed_conf['es_url_prefix'] = conf['es_url_prefix']
 
-    return parsed_conf
+    if 'cx_token' in conf:
+        parsed_conf['headers'] = {'token': conf['cx_token']}
 
+    if 'cx_es_ver' in conf:
+        parsed_conf['cx_es_ver'] = conf['cx_es_ver']
+
+    return parsed_conf
 
 def pytzfy(dt):
     # apscheduler requires pytz timezone objects

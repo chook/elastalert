@@ -1,3 +1,8 @@
+## Coralogix
+es_dont_clear_scroll: true
+cx_es_ver: 7.4.1
+##
+
 # This is the folder that contains the rule yaml files
 # Any .yaml file will be loaded as a rule
 rules_folder: example_rules
