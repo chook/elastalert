@@ -388,6 +388,9 @@ def build_es_conn_config(conf):
     if 'cx_token' in conf:
         parsed_conf['headers'] = {'token': conf['cx_token']}
 
+    if 'cx_es_ver' in conf:
+        parsed_conf['cx_es_ver'] = conf['cx_es_ver']
+
     return parsed_conf
 
 def pytzfy(dt):

@@ -28,7 +28,7 @@ class ElasticSearchClient(Elasticsearch):
                                                   send_get_body_as=conf['send_get_body_as'],
                                                   client_cert=conf['client_cert'],
                                                   client_key=conf['client_key'],
-                                                  headers={'token': conf['cx_token']})
+                                                  headers=conf['headers'])
         self._conf = copy.copy(conf)
         self._es_version = conf['cx_es_ver'] if conf['cx_es_ver'] is not None else None
 
