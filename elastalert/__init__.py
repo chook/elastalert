@@ -27,9 +27,10 @@ class ElasticSearchClient(Elasticsearch):
                                                   timeout=conf['es_conn_timeout'],
                                                   send_get_body_as=conf['send_get_body_as'],
                                                   client_cert=conf['client_cert'],
-                                                  client_key=conf['client_key'])
+                                                  client_key=conf['client_key'],
+                                                  headers={'token': conf['cx_token']})
         self._conf = copy.copy(conf)
-        self._es_version = None
+        self._es_version = conf['cx_es_ver'] if conf['cx_es_ver'] is not None else None
 
     @property
     def conf(self):

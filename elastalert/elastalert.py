@@ -655,7 +655,7 @@ class ElastAlerter(object):
             # It's possible to scroll far enough to hit max recursive depth
             pass
 
-        if 'scroll_id' in rule:
+        if 'scroll_id' in rule and self.conf['es_dont_clear_scroll'] is None:
             scroll_id = rule.pop('scroll_id')
             self.thread_data.current_es.clear_scroll(scroll_id=scroll_id)
 
